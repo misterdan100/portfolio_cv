@@ -1,0 +1,227 @@
+"use client";
+
+import React, { useState } from 'react';
+import {Boxes} from 'lucide-react';
+import { JavaScript, TypeScript, React as ReactIcon, NextJs, TailwindCSS, Framer, NodeJs, ExpressJsLight, MongoDB, PostgreSQL, Docker, Git, HTML5, CSS } from 'developer-icons';
+
+interface Skill {
+    name: string;
+    category: string;
+    icon: React.ReactNode;
+    tailwindClasses?: string;
+    color?: string;
+}
+
+const SkillsSection = () => {
+    const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+    const skills: Skill[] = [
+
+        {
+            name: 'React',
+            category: 'Frontend',
+            icon: <ReactIcon className="w-6 h-6" />,
+            tailwindClasses: 'border-cyan-400/40',
+            color: '#61DAFB'
+        },
+        {
+            name: 'Next.js',
+            category: 'Frontend',
+            icon: <NextJs className="w-6 h-6" />,
+            tailwindClasses: 'border-gray-300/40',
+            color: '#FFFFFF'
+        },
+        {
+            name: 'TypeScript',
+            category: 'Languages',
+            icon: <TypeScript className="w-6 h-6" />,
+            tailwindClasses: 'border-blue-400/40',
+            color: '#3178C6'
+        },
+        {
+            name: 'JavaScript',
+            category: 'Languages',
+            icon: <JavaScript className="w-6 h-6" />,
+            tailwindClasses: 'border-yellow-400/40 ',
+            color: '#F7DF1E'
+        },
+        {
+            name: 'TailwindCSS',
+            category: 'Frontend',
+            icon: <TailwindCSS className="w-6 h-6" />,
+            tailwindClasses: 'border-sky-400/40',
+            color: '#06B6D4'
+        },
+        {
+            name: 'Framer Motion',
+            category: 'Frontend',
+            icon: <Framer className="w-6 h-6 " color='#fff' />,
+            tailwindClasses: 'border-purple-400/40',
+            color: '#9C5DF3'
+        },
+
+
+        // Backend
+        {
+            name: 'Node.js',
+            category: 'Backend',
+            icon: <NodeJs className="w-6 h-6" />,
+            tailwindClasses: 'border-green-400/40',
+            color: '#339933'
+        },
+        {
+            name: "Express.js",
+            category: "Backend",
+            icon: <ExpressJsLight className="w-6 h-6" />,
+            tailwindClasses: 'border-gray-300/40',
+            color: '#FFFFFF'
+        },
+        {
+            name: 'MongoDB',
+            category: 'Backend',
+            icon: <MongoDB className="w-6 h-6" />,
+            tailwindClasses: 'border-green-500/40',
+            color: '#47A248'
+        },
+        {
+            name: 'PostgreSQL',
+            category: 'Backend',
+            icon: <PostgreSQL className="w-6 h-6" />,
+            tailwindClasses: 'border-blue-400/40',
+            color: '#336791'
+        },
+
+        // Others
+        {
+            name: 'Docker',
+            category: 'Others',
+            icon: <Docker className="w-6 h-6" />,
+            tailwindClasses: 'border-blue-400/40',
+            color: '#2496ED'
+        },
+        {
+            name: 'Git',
+            category: 'Others',
+            icon: <Git className="w-6 h-6" />,
+            tailwindClasses: 'border-orange-400/40',
+            color: '#F05032'
+        },
+        {
+            name: "Sanity",
+            category: "Others",
+            icon: <Boxes className="w-6 h-6 text-red-400" />,
+            tailwindClasses: 'border-red-400/40',
+            color: '#F03E2F'
+        },
+        {
+            name: 'HTML',
+            category: 'Languages',
+            icon: <HTML5 className="w-6 h-6" />,
+            tailwindClasses: 'border-orange-500/40',
+            color: '#E34F26'
+        },
+        {
+            name: 'CSS',
+            category: 'Languages',
+            icon: <CSS className="w-6 h-6" />,
+            tailwindClasses: 'border-purple-300/40',
+            color: '#883fb6'
+        },
+    ];
+
+    const categories = Array.from(new Set(skills.map(skill => skill.category)));
+
+    const filteredSkills = activeCategory
+        ? skills.filter(skill => skill.category === activeCategory)
+        : skills;
+
+    return (
+        <section className="py-24 min-h-screen bg-gray-900">
+            <div className="max-w-6xl mx-auto px-4">
+                {/* Section Title */}
+                <div className="text-center mb-16">
+                    <div className="relative inline-block">
+                        <h2 className="text-2xl md:text-5xl font-bold">
+                            {"Skills & Technologies".split("").map((letter, i) => (
+                                <span
+                                    key={i}
+                                    className="inline-block"
+                                    style={{
+                                        background: `linear-gradient(to right, rgb(167, 139, 250) ${i * 5}%, rgb(139, 92, 246) ${i * 10}%)`,
+                                        WebkitBackgroundClip: "text",
+                                        WebkitTextFillColor: "transparent"
+                                    }}
+                                >
+                                    {letter === " " ? "\u00A0" : letter}
+                                </span>
+                            ))}
+                        </h2>
+                        <div className="absolute -inset-x-4 -inset-y-2 bg-gradient-to-r from-violet-500/20 to-purple-500/20 blur-xl rounded-full" />
+                    </div>
+                    <div className="h-1 w-24 mx-auto mt-6 rounded-full bg-gradient-to-r from-violet-500/50 to-purple-500/50" />
+                </div>
+
+                {/* Category Filters */}
+                <div className="flex flex-wrap justify-center gap-3 mb-12">
+                    <button
+                        onClick={() => setActiveCategory(null)}
+                        className={`px-5 py-1 cursor-pointer rounded-full text-sm transition-all ${activeCategory === null
+                            ? 'bg-violet-500/20 text-violet-300 border border-violet-500/30'
+                            : 'text-gray-400 hover:text-violet-300'
+                            }`}
+                    >
+                        All
+                    </button>
+                    {categories.map((category) => (
+                        <button
+                            key={category}
+                            onClick={() => setActiveCategory(category)}
+                            className={`px-5 py-1 cursor-pointer rounded-full text-sm transition-all ${activeCategory === category
+                                ? 'bg-violet-500/20 text-violet-300 border border-violet-500/30'
+                                : 'text-gray-400 hover:text-violet-300'
+                                }`}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+
+                {/* Skills Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {filteredSkills.map((skill) => (
+                        <div
+                            key={skill.name}
+                            className={`group relative cursor-grab ${skill.tailwindClasses}`}
+                            // style={{
+                            //     '--skill-color': skill.color || '#9333ea',
+                            // } as React.CSSProperties}
+                        >
+                            <div 
+                                className="absolute inset-0 rounded-xl blur-xl transition-opacity opacity-0 group-hover:opacity-100" 
+                                style={{
+                                    backgroundColor: `${skill.color}20` // 20 is hex for 12% opacity
+                                }}
+                            />
+                            <div 
+                                className="relative bg-transparent backdrop-blur-sm rounded-xl border p-4 transition-all hover:-translate-y-1 duration-200 group-hover:shadow-lg"
+                                style={{
+                                    borderColor: `${skill.color}40`, // 40 is hex for 25% opacity
+                                    boxShadow: `0 10px 15px -3px ${skill.color}10, 0 4px 6px -4px ${skill.color}10`
+                                }}
+                            >
+                                <div className="flex items-center gap-3">
+                                    {skill.icon}
+                                    <span className="font-medium text-gray-300 group-hover:text-gray-100 transition-colors">
+                                        {skill.name}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default SkillsSection;
