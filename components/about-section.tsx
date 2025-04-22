@@ -32,11 +32,11 @@ const SkillCard = ({ Icon, title, description }: { Icon: any, title: string, des
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             whileHover={{ scale: 1.05 }}
         >
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-            <div className="relative bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-violet-500/20">
-                <Icon className="w-8 h-8 text-violet-400 mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-                <p className="text-gray-300">{description}</p>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#009963]/20 to-[#006B99]/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300" />
+            <div className="relative bg-[#2E6160]/50 backdrop-blur-sm p-6 rounded-xl border border-[#009963]/20">
+                <Icon className="w-8 h-8 mb-4 text-[#009963]" />
+                <h3 className="text-xl font-bold text-[#EEFBEE] mb-2">{title}</h3>
+                <p className="text-[#EEFBEE]">{description}</p>
             </div>
         </motion.div>
     );
@@ -45,48 +45,44 @@ const SkillCard = ({ Icon, title, description }: { Icon: any, title: string, des
 const AboutSection = () => {
     return (
         <motion.section
-            className="relative min-h-screen bg-gray-900 py-20 px-4 overflow-hidden"
+            className="relative min-h-screen bg-[#122727] py-20 px-4 overflow-hidden"
         >
-            {/* Background Elements remain the same */}
             <div className="absolute inset-0">
                 <div className="absolute inset-0 opacity-30"
                     style={{
-                        backgroundImage: `radial-gradient(circle at 2% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 100%),
-                            radial-gradient(circle at 98% 50%, rgba(217, 70, 239, 0.1) 0%, transparent 100%)`
+                        backgroundImage: `radial-gradient(circle at 2% 50%, rgba(0,153,99,0.1) 0%, transparent 100%),
+                            radial-gradient(circle at 98% 50%, rgba(0,107,153,0.1) 0%, transparent 100%)`
                     }} />
             </div>
 
             <div className="max-w-6xl mx-auto relative z-10">
-                {/* Section Title remains the same */}
                 <motion.div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
                         About Me
                         <motion.span
                             className="inline-block ml-2"
                             animate={{ rotate: [0, 10, -10, 0] }}
                             transition={{ duration: 2, repeat: Infinity }}
                         >
-                            <Sparkles className="w-8 h-8 text-violet-400" />
+                            <Sparkles className="w-8 h-8 text-gray-300" />
                         </motion.span>
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 mx-auto" />
+                    <div className="w-24 h-1 bg-gradient-to-r from-[#004C31] to-[#004A6A] mx-auto" />
                 </motion.div>
 
-                {/* Main Content */}
                 <div className="grid md:grid-cols-2 gap-12 mb-20">
-                    {/* Left Column - Updated About Text */}
                     <div className="space-y-6">
                         <AnimatedPanel delay={0.2}>
-                            <h3 className="text-2xl font-bold text-violet-400 mb-4">
-                            Hello! I&apos;m Daniel
+                            <h3 className="text-2xl font-bold text-[#009963] mb-4">
+                                Hello! I&apos;m Daniel
                             </h3>
-                            <p className="text-gray-300 leading-relaxed">
+                            <p className="text-[#EEFBEE] leading-relaxed">
                                 A driven Web Developer honing full-stack skills with a focus on modern JavaScript technologies including React, Next.js, Node.js, and TypeScript. I combine dedicated self-study with daily hands-on practice, building personal projects that span both front-end and back-end development. <br/>I leverage AI tools to accelerate my development workflow, streamline debugging, and brainstorm innovative approaches. My passion is creating functional, engaging web applications and solving problems efficiently through code.
                             </p>
                         </AnimatedPanel>
 
                         <AnimatedPanel delay={0.4}>
-                            <p className="text-gray-300 leading-relaxed">
+                            <p className="text-[#EEFBEE] leading-relaxed">
                                 I am actively looking for opportunities to bring my strong work ethic, problem-solving skills, AI-assisted efficiency, and enthusiasm for development to a challenging role. Ready to contribute effectively and learn quickly within a collaborative team environment.
                             </p>
                         </AnimatedPanel>
@@ -99,33 +95,18 @@ const AboutSection = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <div className="text-center">
-                                <Zap className="w-8 h-8 text-violet-400 mx-auto mb-4" />
-                                <h4 className="text-xl font-bold text-white mb-2">Full Stack Skill</h4>
-                                <p className="text-gray-300">Proficient in both frontend and backend development</p>
+                                <Zap className="w-8 h-8 text-[#009963] mx-auto mb-4" />
+                                <h4 className="text-xl font-bold text-[#EEFBEE] mb-2">Full Stack Skill</h4>
+                                <p className="text-[#EEFBEE]">Proficient in both frontend and backend development</p>
                             </div>
                             <div className="text-center">
-                                <Brain className="w-8 h-8 text-violet-400 mx-auto mb-4" />
-                                <h4 className="text-xl font-bold text-white mb-2">Problem Solver</h4>
-                                <p className="text-gray-300">Creating efficient solutions to complex challenges</p>
+                                <Brain className="w-8 h-8 text-[#009963] mx-auto mb-4" />
+                                <h4 className="text-xl font-bold text-[#EEFBEE] mb-2">Problem Solver</h4>
+                                <p className="text-[#EEFBEE]">Creating efficient solutions to complex challenges</p>
                             </div>
                         </motion.div>
-
-                        {/* Updated Stats */}
-                        {/* <AnimatedPanel delay={0.6}>
-                            <div className="grid grid-cols-2 gap-4 mt-8">
-                                <div className="bg-gray-800/50 p-4 rounded-lg border border-violet-500/20">
-                                    <h4 className="text-violet-400 font-bold">Experience</h4>
-                                    <p className="text-3xl font-bold text-white">1+ Years</p>
-                                </div>
-                                <div className="bg-gray-800/50 p-4 rounded-lg border border-violet-500/20">
-                                    <h4 className="text-violet-400 font-bold">Projects</h4>
-                                    <p className="text-3xl font-bold text-white">15+</p>
-                                </div>
-                            </div>
-                        </AnimatedPanel> */}
                     </div>
 
-                    {/* Right Column - Updated Skills */}
                     <div className="grid grid-cols-1 gap-6">
                         <SkillCard
                             Icon={Code}
@@ -144,31 +125,6 @@ const AboutSection = () => {
                         />
                     </div>
                 </div>
-
-                {/* Bottom Section - Updated Quick Facts */}
-                {/* <motion.div
-                    className="grid md:grid-cols-3 gap-8"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <div className="text-center">
-                        <Zap className="w-8 h-8 text-violet-400 mx-auto mb-4" />
-                        <h4 className="text-xl font-bold text-white mb-2">Full Stack Expert</h4>
-                        <p className="text-gray-300">Proficient in both frontend and backend development</p>
-                    </div>
-                    <div className="text-center">
-                        <Rocket className="w-8 h-8 text-violet-400 mx-auto mb-4" />
-                        <h4 className="text-xl font-bold text-white mb-2">Cloud Native</h4>
-                        <p className="text-gray-300">Experienced in AWS and modern cloud technologies</p>
-                    </div>
-                    <div className="text-center">
-                        <Brain className="w-8 h-8 text-violet-400 mx-auto mb-4" />
-                        <h4 className="text-xl font-bold text-white mb-2">Problem Solver</h4>
-                        <p className="text-gray-300">Creating efficient solutions to complex challenges</p>
-                    </div>
-                </motion.div> */}
             </div>
         </motion.section>
     );

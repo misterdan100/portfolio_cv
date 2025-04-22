@@ -46,14 +46,14 @@ const ComingSoonPage = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-950 to-slate-900 text-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-[#122727] via-[#2E6160] to-[#122727] text-[#EEFBEE] flex flex-col items-center justify-center p-4 relative overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0">
                 <div className="absolute inset-0 opacity-20">
                     {[...Array(8)].map((_, i) => (
                         <div
                             key={i}
-                            className="absolute transform rotate-45 border border-indigo-700/30"
+                            className="absolute transform rotate-45 border border-[#004D53]/30"
                             style={{
                                 top: `${Math.random() * 100}%`,
                                 left: `${Math.random() * 100}%`,
@@ -71,10 +71,10 @@ const ComingSoonPage = () => {
                 {/* Profile Section */}
                 <div className="mb-12 space-y-6">
                     <div className="relative group cursor-pointer mb-8">
-                        <div className="w-32 h-32 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-full mx-auto flex items-center justify-center transform transition-all duration-300 group-hover:scale-105">
+                        <div className="w-32 h-32 bg-gradient-to-br from-[#004C31] to-[#004A6A] rounded-full mx-auto flex items-center justify-center transform transition-all duration-300 group-hover:scale-105">
                             <span className="text-4xl font-bold">MD</span>
                         </div>
-                        <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-violet-600 rounded-full blur opacity-30 group-hover:opacity-40 transition duration-300"></div>
+                        <div className="absolute -inset-4 bg-gradient-to-r from-[#004C31] to-[#004A6A] rounded-full blur opacity-30 group-hover:opacity-40 transition duration-300"></div>
                     </div>
 
                     <div className="min-h-[4rem]">
@@ -102,10 +102,10 @@ const ComingSoonPage = () => {
                         { Icon: Database, label: "Backend Systems" },
                         { Icon: Cpu, label: "Devops" }
                     ].map(({ Icon, label }) => (
-                        <div key={label} className="flex justify-center items-center gap-2 w-32 h-32 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-full mx-auto group relative">
+                        <div key={label} className="flex justify-center items-center gap-2 w-32 h-32 bg-gradient-to-br from-[#004C31] to-[#004A6A] rounded-full mx-auto group relative">
                             <div className="relative flex flex-col items-center space-y-2 p-4">
-                                <Icon className="w-8 h-8 text-indigo-300 group-hover:text-indigo-200 transition-colors" />
-                                <span className="text-sm text-indigo-200">{label}</span>
+                                <Icon className="w-8 h-8 text-[#009963] group-hover:text-[#006B99] transition-colors" />
+                                <span className="text-sm text-[#EEFBEE]">{label}</span>
                             </div>
                         </div>
                     ))}
@@ -114,7 +114,7 @@ const ComingSoonPage = () => {
                 {/* Coming Soon Message */}
                 <div className="space-y-6 transform transition-all duration-500 min-h-[4rem]">
                     {showContent && (
-                        <p className="text-xl text-indigo-200/90 max-w-lg mx-auto leading-relaxed">
+                        <p className="text-xl text-[#EEFBEE]/90 max-w-lg mx-auto leading-relaxed">
                             <TypeWriter
                                 text="Hey there! 👋 While I'm busy turning coffee into code and building this portfolio, feel free to grab a virtual cup and wait with me. I promise it'll be worth the bytes!"
                                 speed={20}
@@ -138,18 +138,18 @@ const ComingSoonPage = () => {
                             className="group relative p-4 hover:scale-110 transition-all duration-300"
                             aria-label={label}
                         >
-                            <div className="absolute inset-0 bg-indigo-500/10 rounded-lg blur-sm transform group-hover:bg-indigo-500/30 transition-all duration-300"></div>
-                            <Icon className="w-6 h-6 relative z-10 group-hover:text-indigo-200 transition-colors duration-300" />
+                            <div className="absolute inset-0 bg-[#6EFF91]/10 rounded-lg blur-sm transform transition-all duration-300 group-hover:bg-[#6EFF91]/30"></div>
+                            <Icon className="w-6 h-6 relative z-10 text-[#EEFBEE] group-hover:text-[#EEFBEE] transition-colors duration-300" />
                         </a>
                     ))}
                 </div>
             </div>
 
             {/* Bottom Gradient Line */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-20"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2E6160] to-transparent opacity-20"></div>
 
             {/* Footer */}
-            <footer className="absolute bottom-8 text-sm text-indigo-200/60 opacity-0 animate-fadeIn"
+            <footer className="absolute bottom-8 text-sm text-[#EEFBEE]/60 opacity-0 animate-fadeIn"
                 style={{ animationDelay: '4.5s', animationFillMode: 'forwards' }}>
                 <p>Portfolio Launch Coming Soon</p>
             </footer>

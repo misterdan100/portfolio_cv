@@ -109,16 +109,16 @@ const MainContainer = () => {
         smoothProgress,
         [0, 0.5, 1],
         [
-            "radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
-            "radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
-            "radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.1) 0%, rgba(0, 0, 0, 0) 70%)"
+            "radial-gradient(circle at 50% 50%, rgba(0,76,49,0.1) 0%, rgba(0,0,0,0) 70%)",
+            "radial-gradient(circle at 50% 50%, rgba(0,153,99,0.1) 0%, rgba(0,0,0,0) 70%)",
+            "radial-gradient(circle at 50% 50%, rgba(25,127,138,0.1) 0%, rgba(0,0,0,0) 70%)"
         ]
     );
 
     return (
         <motion.main
             ref={containerRef}
-            className="relative bg-gray-900"
+            className="relative bg-[#122727]"
             style={{
                 background: gradientProgress
             }}
@@ -128,8 +128,7 @@ const MainContainer = () => {
                 <motion.div
                     className="absolute inset-0 opacity-30"
                     style={{
-                        backgroundImage: `radial-gradient(circle at 2% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 100%),
-                                        radial-gradient(circle at 98% 50%, rgba(217, 70, 239, 0.1) 0%, transparent 100%)`,
+                        backgroundImage: `radial-gradient(circle at 2% 50%, rgba(0,153,99,0.1) 0%, transparent 100%), radial-gradient(circle at 98% 50%, rgba(0,107,153,0.1) 0%, transparent 100%)`,
                         scale: smoothProgress
                     }}
                 />
@@ -201,7 +200,7 @@ const MainContainer = () => {
 
             {/* Scroll Progress Indicator */}
             <motion.div
-                className="fixed bottom-4 right-4 w-12 h-12 rounded-full border-2 border-violet-500 flex items-center justify-center text-violet-400 text-sm font-medium"
+                className="fixed bottom-4 right-4 w-12 h-12 rounded-full border-2 border-[#6EFF91] flex items-center justify-center text-[#EEFBEE] text-sm font-medium"
                 style={{
                     scale: useTransform(smoothProgress, [0, 0.1], [0, 1]),
                     opacity: useTransform(smoothProgress, [0, 0.1], [0, 1])
@@ -210,11 +209,11 @@ const MainContainer = () => {
                 <motion.div
                     className="absolute inset-2"
                     style={{
-                        background: "linear-gradient(to bottom, #7C3AED 50%, transparent 50%)",
+                        background: "linear-gradient(to bottom, #004C31 0%, #004A6A 100%)",
                         rotate: useTransform(smoothProgress, [0, 1], [0, 360])
                     }}
                 />
-                <div className="absolute inset-2 bg-gray-900 rounded-full flex items-center justify-center">
+                <div className="absolute inset-2 bg-[#2E6160] rounded-full flex items-center justify-center">
                     {Math.round(useTransform(smoothProgress, [0, 1], [0, 100]).get())}%
                 </div>
             </motion.div>

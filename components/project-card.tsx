@@ -29,11 +29,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = useState(false);
 
-    // Mouse tracking for parallax effect
-    // const mouseX = useMotionValue(0);
-    // const mouseY = useMotionValue(0);
-
-
     const springConfig = { stiffness: 150, damping: 15, mass: 0.1 };
     const rotationSpringConfig = { stiffness: 400, damping: 25, mass: 0.1 };
 
@@ -87,7 +82,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             onMouseLeave={handleMouseLeave}
         >
             <motion.div
-                className="relative bg-gray-800/50 rounded-xl overflow-hidden backdrop-blur-lg border border-gray-700/50"
+                className="relative bg-[#0E1E1E]/50 rounded-xl overflow-hidden backdrop-blur-lg border border-[#0E1E1E]/50"
                 style={{
                     rotateX,
                     rotateY,
@@ -117,7 +112,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                         transition={{ duration: 0.4 }}
                     />
                     <motion.div
-                        className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"
+                        className="absolute inset-0 bg-gradient-to-t from-[#007A5E] via-[#005F7A]/50 to-transparent"
                         initial={{ opacity: 0.5 }}
                         whileHover={{ opacity: 0.7 }}
                         transition={{ duration: 0.3 }}
@@ -136,24 +131,24 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                     {/* Title and Status */}
                     <div className="flex items-center gap-3 mb-3">
                         <motion.h3
-                            className="text-2xl font-bold text-violet-300"
+                            className="text-2xl font-bold text-[#E6F4E6]"
                             style={{ translateZ: 50 }}
                         >
                             {project.title}
                         </motion.h3>
                         {project.status === 'in-progress' && (
                             <motion.div
-                                className="px-3 py-1 bg-amber-500/20 rounded-full border border-amber-500/30"
+                                className="px-3 py-1 bg-[#166D75]/20 rounded-full border border-[#166D75]/30"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.3 }}
                             >
                                 <div className="flex items-center gap-2">
                                     <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#166D75] opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-[#166D75]"></span>
                                     </span>
-                                    <span className="text-xs font-medium text-amber-400">In Progress</span>
+                                    <span className="text-xs font-medium text-[#166D75]">In Progress</span>
                                 </div>
                             </motion.div>
                         )}
@@ -161,7 +156,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
                     {/* Description */}
                     <motion.p
-                        className="text-gray-300 mb-4 leading-relaxed"
+                        className="text-[#E6F4E6] mb-4 leading-relaxed"
                         style={{ translateZ: 30 }}
                     >
                         {project.description}
@@ -178,7 +173,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                                 className={`${getTechStyle(tech)} px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm border cursor-default`}
                                 whileHover={{
                                     scale: 1.05,
-                                    // backgroundColor: "rgba(124, 58, 237, 0.3)"
                                 }}
                             >
                                 {tech}
@@ -197,10 +191,10 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-4 py-2 bg-violet-600/20 rounded-lg text-violet-300 font-medium hover:bg-violet-600/30 transition-colors flex gap-2 items-center h-10"
+                                className="px-4 py-2 bg-[#4EFF85]/20 rounded-lg  font-medium hover:bg-[#5EFF85]/30 transition-colors flex gap-2 items-center h-10"
                                 whileHover={{
                                     scale: 1.05,
-                                    backgroundColor: "rgba(124, 58, 237, 0.3)"
+                                    backgroundColor: "rgba(94, 255, 133, 0.3)"
                                 }}
                             >
                                 {link.icon} {link.label}
@@ -212,7 +206,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
             {/* Hover Glow Effect */}
             <motion.div
-                className="absolute -inset-1 rounded-xl bg-gradient-to-r from-violet-600/20 to-purple-600/20 -z-10 opacity-0 group-hover:opacity-100 blur-xl"
+                className="absolute -inset-1 rounded-xl bg-gradient-to-r from-[#003D28]/20 to-[#003C5A]/20 -z-10 opacity-0 group-hover:opacity-100 blur-xl"
                 animate={isHovered ? {
                     opacity: [0, 0.5, 0],
                     scale: [0.8, 1.2, 0.8],

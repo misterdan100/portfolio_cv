@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import {Boxes} from 'lucide-react';
+import { motion } from 'motion/react';
+import { Boxes, SquareChartGantt } from 'lucide-react';
 import { JavaScript, TypeScript, React as ReactIcon, NextJs, TailwindCSS, Framer, NodeJs, ExpressJsLight, MongoDB, PostgreSQL, Docker, Git, HTML5, CSS } from 'developer-icons';
 
 interface Skill {
@@ -136,38 +137,31 @@ const SkillsSection = () => {
         : skills;
 
     return (
-        <section className="py-24 min-h-screen bg-gray-900">
+        <section className="py-24 min-h-screen bg-[#122727]">
             <div className="max-w-6xl mx-auto px-4">
+
                 {/* Section Title */}
-                <div className="text-center mb-16">
-                    <div className="relative inline-block">
-                        <h2 className="text-2xl md:text-5xl font-bold">
-                            {"Skills & Technologies".split("").map((letter, i) => (
-                                <span
-                                    key={i}
-                                    className="inline-block"
-                                    style={{
-                                        background: `linear-gradient(to right, rgb(167, 139, 250) ${i * 5}%, rgb(139, 92, 246) ${i * 10}%)`,
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent"
-                                    }}
-                                >
-                                    {letter === " " ? "\u00A0" : letter}
-                                </span>
-                            ))}
-                        </h2>
-                        <div className="absolute -inset-x-4 -inset-y-2 bg-gradient-to-r from-violet-500/20 to-purple-500/20 blur-xl rounded-full" />
-                    </div>
-                    <div className="h-1 w-24 mx-auto mt-6 rounded-full bg-gradient-to-r from-violet-500/50 to-purple-500/50" />
-                </div>
+                <motion.div className="text-center mb-20">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 pb-2 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
+                        Skills & Technologies
+                        <motion.span
+                            className="inline-block ml-2"
+                            animate={{ rotate: [0, 10, -10, 0] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                        >
+                            <SquareChartGantt className="w-8 h-8 text-gray-300" />
+                        </motion.span>
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-[#004C31] to-[#004A6A] mx-auto" />
+                </motion.div>
 
                 {/* Category Filters */}
                 <div className="flex flex-wrap justify-center gap-3 mb-12">
                     <button
                         onClick={() => setActiveCategory(null)}
                         className={`px-5 py-1 cursor-pointer rounded-full text-sm transition-all ${activeCategory === null
-                            ? 'bg-violet-500/20 text-violet-300 border border-violet-500/30'
-                            : 'text-gray-400 hover:text-violet-300'
+                            ? 'bg-[#197F8A]/20 text-[#6EFF91] border border-[#197F8A]/30'
+                            : 'text-[#EEFBEE] hover:text-[#6EFF91]'
                             }`}
                     >
                         All
@@ -177,8 +171,8 @@ const SkillsSection = () => {
                             key={category}
                             onClick={() => setActiveCategory(category)}
                             className={`px-5 py-1 cursor-pointer rounded-full text-sm transition-all ${activeCategory === category
-                                ? 'bg-violet-500/20 text-violet-300 border border-violet-500/30'
-                                : 'text-gray-400 hover:text-violet-300'
+                                ? 'bg-[#197F8A]/20 text-[#6EFF91] border border-[#197F8A]/30'
+                                : 'text-[#EEFBEE] hover:text-[#6EFF91]'
                                 }`}
                         >
                             {category}
@@ -192,9 +186,6 @@ const SkillsSection = () => {
                         <div
                             key={skill.name}
                             className={`group relative cursor-grab ${skill.tailwindClasses}`}
-                            // style={{
-                            //     '--skill-color': skill.color || '#9333ea',
-                            // } as React.CSSProperties}
                         >
                             <div 
                                 className="absolute inset-0 rounded-xl blur-xl transition-opacity opacity-0 group-hover:opacity-100" 

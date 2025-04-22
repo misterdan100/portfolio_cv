@@ -3,7 +3,7 @@ import LenisScroll from "@/lib/lenis-scroll";
 
 export default function Page() {
   return (
-    <main className=" bg-gray-900">
+    <main className=" bg-[#122727]">
       <LenisScroll />
       <MainContainer />
     </main>

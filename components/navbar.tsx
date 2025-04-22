@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Mail, FileText, Menu, X } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { XLight } from 'developer-icons';
-
+import Image from 'next/image';
 
 export const socialLinks = [
     {
@@ -68,13 +68,35 @@ const NavBar = () => {
                 className="relative w-full max-w-5xl"
             >
                 {/* Glow Effect */}
-                <div className="absolute inset-0 bg-violet-500/10 rounded-full blur-xl transform scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#004C31]/0 via-[#004A6A]/10 to-[#004C31]/0 rounded-full blur-lg transform scale-110" />
 
                 {/* Main Navigation */}
-                <div className="relative z-[100] px-4 md:px-8 py-3 md:py-4 bg-gray-900/80 backdrop-blur-md rounded-full border border-violet-500/20 shadow-lg shadow-violet-500/10">
+                <div className="relative z-[100] px-4 md:px-8 py-3 md:py-4 bg-[#122727]/80 backdrop-blur-md rounded-full border border-[#004D53]/40 shadow-lg shadow-[#004A6A]/10">
                     <div className="flex items-center justify-between gap-4">
                         {/* Desktop Navigation */}
                         <ul className="hidden md:flex items-center gap-8">
+                        <motion.a
+                                    key='logo-navbar-item'
+                                    href=''
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`text-gray-400 transition-colors relative group`}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    // transition={{ delay: index * 0.1 }}
+                                >
+                                    <Image 
+                                        src="https://raw.githubusercontent.com/misterdan100/misterdan-cv-v1/3c8a1efa2243b5df709c190cb4a142a259504922/src/assets/img/daniel-merchan-logo_4.svg"
+                                        alt="Logo"
+                                        width={40}
+                                        height={40}
+                                        priority
+                                    />
+
+                                </motion.a>
+
                             {navItems.map((item) => (
                                 <motion.li
                                     className="cursor-pointer"
@@ -84,10 +106,10 @@ const NavBar = () => {
                                 >
                                     <Link
                                         href={item.href}
-                                        className="text-gray-300 hover:text-white transition-colors px-2 py-1 relative group text-sm font-medium"
+                                        className="text-[#EEFBEE] hover:text-[#6EFF91] transition-colors px-2 py-1 relative group text-sm font-medium"
                                     >
                                         {item.name}
-                                        <div className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-violet-500 group-hover:w-full group-hover:left-0 transition-all duration-300" />
+                                        <div className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-[#6EFF91] group-hover:w-full group-hover:left-0 transition-all duration-300" />
                                     </Link>
                                 </motion.li>
                             ))}
@@ -103,7 +125,7 @@ const NavBar = () => {
                         </motion.button>
 
                         {/* Social Links - Desktop */}
-                        <div className="hidden md:flex items-center gap-4 border-l border-violet-500/20 pl-6">
+                        <div className="hidden md:flex items-center gap-4 border-l border-[#004D53]/40 pl-6">
                             {socialLinks.map((social, index) => (
                                 <motion.a
                                     key={social.label}
@@ -155,7 +177,7 @@ const NavBar = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-20 left-0 right-0 bg-gray-900/95 backdrop-blur-lg rounded-2xl border border-violet-500/20 shadow-lg shadow-violet-500/10 p-4 mt-2"
+                            className="absolute top-20 left-0 right-0 bg-[#122727]/95 backdrop-blur-lg rounded-2xl border border-[#004D53]/40 shadow-lg shadow-[#004A6A]/10 p-4 mt-2"
                         >
                             <ul className="space-y-2">
                                 {navItems.map((item, index) => (
@@ -168,7 +190,7 @@ const NavBar = () => {
                                         <Link
                                             href={item.href}
                                             onClick={closeMenu}
-                                            className="block text-gray-300 hover:text-white hover:bg-violet-500/10 rounded-lg px-4 py-2 transition-colors text-sm font-medium"
+                                            className="block text-[#EEFBEE] hover:text-[#6EFF91] hover:bg-[#009963]/10 rounded-lg px-4 py-2 transition-colors text-sm font-medium"
                                         >
                                             {item.name}
                                         </Link>
@@ -180,7 +202,7 @@ const NavBar = () => {
                 </AnimatePresence>
 
                 {/* Background Accent */}
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/5 to-violet-500/0 rounded-full transform scale-105 opacity-50" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#009963]/0 via-[#006B99]/10 to-[#009963]/0 rounded-full transform scale-105 opacity-50" />
             </motion.nav>
         </div>
     );
