@@ -5,7 +5,7 @@ import { motion, useMotionValue } from "motion/react";
 import ProjectCard, { Project } from "./project-card";
 import { PiProjectorScreenBold } from "react-icons/pi";
 import { ExternalLink } from "lucide-react";
-import { GitHubLight } from "developer-icons";
+import { IoLogoGithub } from "react-icons/io5";
 
 const ProjectsSection = () => {
   const sectionRef = useRef(null);
@@ -30,12 +30,12 @@ const ProjectsSection = () => {
       ],
       links: [
         {
-          icon: <ExternalLink className="w-5 h-5 " />,
+          icon: <ExternalLink className="w-5 h-5" />,
           label: "Live Demo",
           url: "https://todo-app-v5-five.vercel.app/",
         },
         {
-          icon: <GitHubLight className="w-5 h-5 " />,
+          icon: <IoLogoGithub className="w-6 h-6"  />,
           label: "GitHub",
           url: "https://github.com/misterdan100/todo-app-v5",
         },
@@ -63,7 +63,7 @@ const ProjectsSection = () => {
           url: "https://rental-cars-project-jet.vercel.app/cars",
         },
         {
-          icon: <GitHubLight className="w-5 h-5" />,
+          icon: <IoLogoGithub className="w-6 h-6"  />,
           label: "GitHub",
           url: "https://github.com/misterdan100/rental-cars-project",
         },
@@ -83,7 +83,7 @@ const ProjectsSection = () => {
           url: "https://ecommerce-misterdan.netlify.app/",
         },
         {
-          icon: <GitHubLight className="w-5 h-5" />,
+          icon: <IoLogoGithub className="w-6 h-6"  />,
           label: "GitHub",
           url: "https://github.com/misterdan100/e-commerce-react-vite-tailwind",
         },
@@ -103,29 +103,29 @@ const ProjectsSection = () => {
   return (
     <motion.section
       ref={sectionRef}
-      className="relative py-20 bg-[#122727] overflow-hidden"
+      className="relative bg-gray-100 dark:bg-[#122727] py-20 overflow-hidden transition-colors duration-700" // Updated background color
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       onMouseMove={handleMouseMove}
     >
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4 container">
         {/* Section Title */}
-        <motion.div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 pb-2 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
+        <motion.div className="mb-8 lg:mb-20 text-center">
+          <h2 className="bg-clip-text bg-gradient-to-b from-gray-900 dark:from-white to-gray-600 dark:to-gray-400 mb-4 pb-2 font-bold text-transparent text-4xl md:text-5xl"> {/* Updated text gradient */}
             Projects
             <motion.span
               className="inline-block ml-2"
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <PiProjectorScreenBold className="w-8 h-8 text-gray-300" />
+              <PiProjectorScreenBold className="w-8 h-8 text-gray-700 dark:text-gray-300" /> {/* Updated icon color */}
             </motion.span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#004C31] to-[#004A6A] mx-auto" />
+          <div className="bg-gradient-to-r from-teal-600 dark:from-[#004C31] to-cyan-700 dark:to-[#004A6A] mx-auto w-24 h-1" /> {/* Updated divider gradient */}
         </motion.div>
 
-        <div className="grid gap-8 max-w-6xl grid-cols-1 md:grid-cols-2 mx-auto">
+        <div className="gap-8 grid grid-cols-1 md:grid-cols-2 mx-auto max-w-6xl">
           {projects.map((project: Project, index: number) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}

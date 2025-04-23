@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar";
@@ -72,21 +72,22 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
     creator: "@manik_dingra",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+  category: "portfolio",
+};
+
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#2E6160" }, // green light
     { media: "(prefers-color-scheme: dark)", color: "#122727" }, // green dark
   ],
-  category: "portfolio",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

@@ -10,7 +10,7 @@ const Footer = () => {
 
     return (
         <motion.footer
-            className="relative bg-[#122727] border-t border-[#2E6160]"
+            className="relative bg-slate-100 dark:bg-[#122727] border-t border-slate-300 dark:border-[#2E6160] transition-colors duration-700"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -49,7 +49,7 @@ const Footer = () => {
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`text-[#EEFBEE] ${social.color} transition-colors relative group`}
+                                className={`text-slate-700 dark:text-[#EEFBEE] ${social.color} transition-colors relative group`}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                                 initial={{ opacity: 0, y: -20 }}
@@ -58,7 +58,7 @@ const Footer = () => {
                             >
                                 <social.icon className="w-5 h-5" />
                                 <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 
-                                    px-2 py-1 bg-[#122727] text-xs text-[#EEFBEE] rounded-md
+                                    px-2 py-1 bg-slate-200 dark:bg-[#122727] text-xs text-slate-800 dark:text-[#EEFBEE] rounded-md
                                     opacity-0 group-hover:opacity-100 transition-opacity
                                     whitespace-nowrap pointer-events-none">
                                     {social.label}
@@ -72,7 +72,7 @@ const Footer = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="text-[#EEFBEE] text-sm"
+                        className="text-slate-600 dark:text-[#EEFBEE] text-sm"
                     >
                         © {currentYear} All rights reserved
                     </motion.div>
