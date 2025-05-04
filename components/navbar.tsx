@@ -136,6 +136,7 @@ const NavBar = () => {
                   className={`text-gray-700 dark:text-gray-400 ${social.color} transition-colors`}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
+                  download={social.label === "CV Resume"}
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>

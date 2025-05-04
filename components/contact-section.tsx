@@ -2,20 +2,12 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import {
-  Code,
-  Database,
-  Brain,
-  Sparkles,
-  Zap,
-  PencilRuler,
-  PhoneOutgoing,
+  Code, PhoneOutgoing,
   MailCheck,
   PhoneMissed,
-  MapPin,
+  MapPin
 } from "lucide-react";
 import ContactForm from "./contact-form";
-import { FaLinkedin } from "react-icons/fa";
-import Link from "next/link";
 import { socialLinks } from "@/lib/socialLinks";
 
 const AnimatedPanel = ({
@@ -42,9 +34,7 @@ const AnimatedPanel = ({
 };
 
 const FormCard = ({
-  Icon,
-  title,
-  description,
+
 }: {
   Icon: any;
   title: string;

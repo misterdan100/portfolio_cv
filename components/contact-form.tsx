@@ -1,7 +1,7 @@
 // Import necessary hook from react-hook-form
 import { useForm } from "react-hook-form";
 import React, { useState } from "react"; // Ensure React is imported
-import { RefreshCcw, RefreshCw, Send } from "lucide-react";
+import { RefreshCw, Send } from "lucide-react";
 import { handleForm } from "@/actions/handleForm";
 
 // Define the shape of the form data

@@ -217,9 +217,13 @@ const HeroSection = () => {
                   transition={{ delay: 2.5 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="#"
+                  target="_blank"
+                  download
+                  href="/files/CV_Portfolio_Daniel_Merchan_ES.pdf"
                 >
-                  <div className="flex items-center gap-2">
+                  <div
+                    className="flex items-center gap-2"
+                  >
                     <span className="z-10 relative">Resume CV</span>
                     <FileDown />
                   </div>

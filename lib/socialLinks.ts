@@ -29,8 +29,8 @@ export const socialLinks = [
     },
     {
       icon: FileText,
-      href: "#",
-      label: "Resume",
+      href: "/files/CV_Portfolio_Daniel_Merchan_ES.pdf",
+      label: "CV Resume",
       color: "hover:text-gray-700 dark:hover:text-green-400",
     },
   ];

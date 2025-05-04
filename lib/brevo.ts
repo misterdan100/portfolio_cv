@@ -73,6 +73,7 @@ export async function sendEmail(formData: FormData) {
     return true
     
   } catch (error) {
+    console.log(error)
     return false
   }
 
