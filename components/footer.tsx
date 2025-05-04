@@ -2,27 +2,28 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { socialLinks } from './navbar';
+
 import Image from 'next/image';
+import { socialLinks } from '@/lib/socialLinks';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
         <motion.footer
-            className="relative bg-slate-100 dark:bg-[#122727] border-t border-slate-300 dark:border-[#2E6160] transition-colors duration-700"
+            className="relative bg-slate-100 dark:bg-[#122727] border-slate-300 dark:border-[#2E6160] border-t transition-colors duration-700"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="max-w-6xl mx-auto px-4 py-12">
-                <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mx-auto px-4 py-12 max-w-6xl">
+                <div className="flex md:flex-row flex-col justify-between items-center">
                     {/* Left side - Logo/Name */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="mb-4 md:mb-0 flex items-center"
+                        className="flex items-center mb-4 md:mb-0"
                     >
                         <Image 
                             src="https://raw.githubusercontent.com/misterdan100/misterdan-cv-v1/3c8a1efa2243b5df709c190cb4a142a259504922/src/assets/img/daniel-merchan-logo_4.svg"
@@ -31,7 +32,7 @@ const Footer = () => {
                             height={28}
                             className="inline-block mr-2"
                         />
-                        <span className="text-xl font-semibold bg-gradient-to-r from-[#004C31] to-[#004A6A] bg-clip-text text-transparent">
+                        <span className="bg-clip-text bg-gradient-to-r from-[#004C31] to-[#004A6A] font-semibold text-transparent text-xl">
                             Daniel Merchan Caceres
                         </span>
                     </motion.div>
@@ -57,10 +58,7 @@ const Footer = () => {
                                 transition={{ delay: index * 0.1 }}
                             >
                                 <social.icon className="w-5 h-5" />
-                                <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 
-                                    px-2 py-1 bg-slate-200 dark:bg-[#122727] text-xs text-slate-800 dark:text-[#EEFBEE] rounded-md
-                                    opacity-0 group-hover:opacity-100 transition-opacity
-                                    whitespace-nowrap pointer-events-none">
+                                <span className="-bottom-8 left-1/2 absolute bg-slate-200 dark:bg-[#122727] opacity-0 group-hover:opacity-100 px-2 py-1 rounded-md text-slate-800 dark:text-[#EEFBEE] text-xs whitespace-nowrap transition-opacity -translate-x-1/2 pointer-events-none transform">
                                     {social.label}
                                 </span>
                             </motion.a>
@@ -80,7 +78,7 @@ const Footer = () => {
 
                 {/* Animated gradient line */}
                 <motion.div
-                    className="absolute top-0 left-0 right-0 h-px"
+                    className="top-0 right-0 left-0 absolute h-px"
                     style={{
                         background: 'linear-gradient(to right, #009963, #006B99)'
                     }}

@@ -6,11 +6,12 @@ import HeroSection from './hero-section';
 import AboutSection from './about-section';
 import ProjectsSection from './projects-section';
 import SkillsSection from './skills-section';
+import ContactSection from './contact-section';
 
 const MainContainer = () => {
     const containerRef = useRef(null);
     const heroRef = useRef(null);
-    // const experienceRef = useRef(null);
+    const contactRef = useRef(null);
     const aboutRef = useRef(null);
     const projectsRef = useRef(null);
     const skillRef = useRef(null);
@@ -34,22 +35,22 @@ const MainContainer = () => {
     const heroY = useTransform(smoothProgress, [0, 0.2], [0, -50]);
 
     // Experience section animations
-    // const { scrollYProgress: expProgress } = useScroll({
-    //     target: experienceRef,
-    //     offset: ["start end", "end start"]
-    // });
+    const { scrollYProgress: expProgress } = useScroll({
+        target: contactRef,
+        offset: ["start end", "end start"]
+    });
 
-    // const experienceOpacity = useTransform(
-    //     expProgress,
-    //     [0, 0.1, 0.8, 1],
-    //     [0, 1, 1, 0]
-    // );
+    const contactOpacity = useTransform(
+        expProgress,
+        [0, 0.1, 0.8, 1],
+        [0, 1, 1, 0]
+    );
 
-    // const experienceScale = useTransform(
-    //     expProgress,
-    //     [0, 0.1, 0.8, 1],
-    //     [0.8, 1, 1, 0.8]
-    // );
+    const contactScale = useTransform(
+        expProgress,
+        [0, 0.1, 0.8, 1],
+        [0.8, 1, 1, 0.8]
+    );
 
     // About section animations
     const { scrollYProgress: aboutProgress } = useScroll({
@@ -138,7 +139,7 @@ const MainContainer = () => {
             <motion.section
                 id="home"
                 ref={heroRef}
-                className="relative top-0 h-screen"
+                className="top-0 relative h-screen"
                 style={{
                     scale: heroScale,
                     opacity: heroOpacity,
@@ -150,8 +151,8 @@ const MainContainer = () => {
 
             {/* Experience Section */}
             {/* <motion.section
-                ref={experienceRef}
-                className="relative top-0 z-10 min-h-screen"
+                ref={contactRef}
+                className="top-0 z-10 relative min-h-screen"
                 style={{
                     opacity: experienceOpacity,
                     scale: experienceScale
@@ -162,7 +163,7 @@ const MainContainer = () => {
 
             <motion.section
                 ref={skillRef}
-                className="relative top-0 z-20 min-h-screen"
+                className="top-0 z-20 relative min-h-screen"
                 style={{
                     opacity: skillOpacity,
                     scale: skillScale
@@ -175,7 +176,7 @@ const MainContainer = () => {
             <motion.section
                 id="projects"
                 ref={projectsRef}
-                className="relative z-20 min-h-screen"
+                className="z-20 relative min-h-screen"
                 style={{
                     opacity: projectsOpacity,
                     scale: projectsScale
@@ -188,7 +189,7 @@ const MainContainer = () => {
             <motion.section
                 id="about"
                 ref={aboutRef}
-                className="relative z-20 min-h-screen"
+                className="z-20 relative min-h-screen"
                 style={{
                     opacity: aboutOpacity,
                     scale: aboutScale
@@ -197,10 +198,23 @@ const MainContainer = () => {
                 <AboutSection />
             </motion.section>
 
+            {/* Contact Section */}
+            <motion.section
+                id="contact"
+                ref={contactRef}
+                className="z-20 relative min-h-screen"
+                style={{
+                    opacity: contactOpacity,
+                    scale: contactScale
+                }}
+            >
+                <ContactSection />
+            </motion.section>
+
 
             {/* Scroll Progress Indicator */}
             <motion.div
-                className="fixed bottom-4 right-4 w-12 h-12 rounded-full border-2 border-[#6EFF91] flex items-center justify-center text-[#EEFBEE] text-sm font-medium"
+                className="right-4 bottom-4 fixed flex justify-center items-center border-[#6EFF91] border-2 rounded-full w-12 h-12 font-medium text-[#EEFBEE] text-sm"
                 style={{
                     scale: useTransform(smoothProgress, [0, 0.1], [0, 1]),
                     opacity: useTransform(smoothProgress, [0, 0.1], [0, 1])
@@ -213,7 +227,7 @@ const MainContainer = () => {
                         rotate: useTransform(smoothProgress, [0, 1], [0, 360])
                     }}
                 />
-                <div className="absolute inset-2 bg-[#2E6160] rounded-full flex items-center justify-center">
+                <div className="absolute inset-2 flex justify-center items-center bg-[#2E6160] rounded-full">
                     {Math.round(useTransform(smoothProgress, [0, 1], [0, 100]).get())}%
                 </div>
             </motion.div>
