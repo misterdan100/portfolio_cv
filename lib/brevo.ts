@@ -1,4 +1,4 @@
-import brevo from "@getbrevo/brevo";
+import * as Brevo from "@getbrevo/brevo";
 
 type FormData = {
   name: string,
@@ -6,17 +6,14 @@ type FormData = {
   message: string
 }
 
-const apiInstance = new brevo.TransactionalEmailsApi();
+const apiInstance = new Brevo.TransactionalEmailsApi();
 
 apiInstance.setApiKey(
-  brevo.TransactionalEmailsApiApiKeys.apiKey,
+  Brevo.TransactionalEmailsApiApiKeys.apiKey,
   process.env.BREVO_API_KEY as string
 );
-console.log('brevo api key set', process.env.BREVO_API_KEY)
 
-const smtpEmail = new brevo.SendSmtpEmail();
-
-console.log('passed brevo')
+const smtpEmail = new Brevo.SendSmtpEmail();
 
 
 export async function sendEmail(formData: FormData) {
