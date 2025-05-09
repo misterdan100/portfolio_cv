@@ -12,8 +12,12 @@ apiInstance.setApiKey(
   brevo.TransactionalEmailsApiApiKeys.apiKey,
   process.env.BREVO_API_KEY as string
 );
+console.log('brevo api key set', process.env.BREVO_API_KEY)
 
 const smtpEmail = new brevo.SendSmtpEmail();
+
+console.log('passed brevo')
+
 
 export async function sendEmail(formData: FormData) {
   const { name, email, message } = formData;
@@ -70,6 +74,7 @@ export async function sendEmail(formData: FormData) {
 
   try {
     await apiInstance.sendTransacEmail(smtpEmail);
+    console.log("Email sent successfully");
     return true
     
   } catch (error) {

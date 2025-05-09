@@ -15,6 +15,36 @@ const ProjectsSection = () => {
   // Projects data
   const projects = [
     {
+      title: "Mister Shop - E-commerce",
+      description:
+        "Full-stack web application simulating an e-commerce site inspired by Tesla Apparel, designed for managing product catalogs, users, and purchasing processes. It allows users to browse, filter by category, manage shopping carts and orders, featuring secure authentication and a robust architecture using Next.js, Typescript, Zustand, Prisma, Docker, and PostgreSQL.",
+      image: "/projects/mister-shop.png",
+      technologies: [
+        "Next.js",
+        "React",
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "TailwindCSS",
+        "Zustand",
+        "Docker",
+        "Prisma",
+      ],
+      links: [
+        {
+          icon: <ExternalLink className="w-5 h-5" />,
+          label: "Live Demo",
+          url: "https://mister-shop.vercel.app/",
+        },
+        {
+          icon: <IoLogoGithub className="w-6 h-6"  />,
+          label: "GitHub",
+          url: "https://github.com/misterdan100/teslo-shop-v1",
+        },
+      ],
+      status: "completed",
+    },
+    {
       title: "Mister Tasks",
       description:
         "Full-stack web application designed for efficient management of personal and project tasks. It allows users to create, edit, organize, and filter tasks, featuring secure authentication and a modern, responsive interface with dark mode.",
