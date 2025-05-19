@@ -15,6 +15,40 @@ const ProjectsSection = () => {
   // Projects data
   const projects = [
     {
+      title: "MisterFi - Finance Management",
+      description:
+        "Full-stack web application for advanced personal finance management. It allows users to log, categorize, and analyze financial transactions, featuring automated expense classification, detailed visualizations, budget tracking, secure authentication, and a modern, responsive interface with light/dark mode.",
+      image: "/projects/misterfi.png",
+      technologies: [
+        "Next.js",
+        "React",
+        "Node.js",
+        "Express",
+        "Turborepo",
+        "PostgreSQL",
+        "React Query",
+        "Node.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Redux Toolkit",
+        "Docker",
+        "Clerk",
+      ],
+      links: [
+        {
+          icon: <ExternalLink className="w-5 h-5" />,
+          label: "Live Demo",
+          url: "https://misterfi.vercel.app/",
+        },
+        {
+          icon: <IoLogoGithub className="w-6 h-6"  />,
+          label: "GitHub",
+          url: "https://github.com/misterdan100/misterfi",
+        },
+      ],
+      status: "completed",
+    },
+    {
       title: "Mister Shop - E-commerce",
       description:
         "Full-stack web application simulating an e-commerce site inspired by Tesla Apparel, designed for managing product catalogs, users, and purchasing processes. It allows users to browse, filter by category, manage shopping carts and orders, featuring secure authentication and a robust architecture using Next.js, Typescript, Zustand, Prisma, Docker, and PostgreSQL.",

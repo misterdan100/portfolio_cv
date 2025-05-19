@@ -195,7 +195,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center items-center gap-2 bg-emerald-100 hover:bg-emerald-600 dark:bg-[#4EFF85]/20 dark:hover:bg-[#009963] px-4 py-2 rounded-lg h-10 font-medium text-emerald-800 hover:text-white dark:hover:text-white dark:text-emerald-100 transition-colors"
+                className="flex justify-center items-center gap-2 bg-emerald-100 hover:bg-emerald-600 dark:bg-[#4EFF85]/20 dark:hover:bg-[#009963] px-4 py-2 rounded-lg h-10 font-medium text-emerald-800 dark:hover:text-white dark:text-emerald-100 transition-colors"
                 whileHover={{
                   scale: 1.05,
                   backgroundColor: "rgba(94, 255, 133, 0.2)",
