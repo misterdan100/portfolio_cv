@@ -15,6 +15,36 @@ const ProjectsSection = () => {
   // Projects data
   const projects = [
     {
+      title: "Imaginify - AI Image SaaS Platform",
+      description:
+        "Full-stack AI SaaS platform for advanced image processing. It allows users to perform Cloudinary AI-powered transformations like image restoration, generative fill, and object removal, featuring a secure credit-based system with Stripe, advanced semantic search, and a community showcase.",
+      image: "/projects/imaginify.png",
+      technologies: [
+        "Next.js",
+        "React",
+        "Node.js",
+        "TypeScript",
+        "MongoDB",
+        "Clerk",
+        "Cloudinary",
+        "Stripe",
+        "TailwindCSS",
+      ],
+      links: [
+        {
+          icon: <ExternalLink className="w-5 h-5" />,
+          label: "Live Demo",
+          url: "https://imaginefy-rho.vercel.app/",
+        },
+        {
+          icon: <IoLogoGithub className="w-6 h-6"  />,
+          label: "GitHub",
+          url: "https://github.com/misterdan100/imaginefy",
+        },
+      ],
+      status: "completed",
+    },
+    {
       title: "MisterFi - Finance Management",
       description:
         "Full-stack web application for advanced personal finance management. It allows users to log, categorize, and analyze financial transactions, featuring automated expense classification, detailed visualizations, budget tracking, secure authentication, and a modern, responsive interface with light/dark mode.",
